@@ -1,11 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import SearchBar from './components/Searchbar';
+import DetailsArea from './components/DetailsArea';
 
 export default function App() {
+  const [movieData, setMovieData] = useState(null);
+
+  const handleMovieData = (data) => {
+    setMovieData(data);
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Web Series Search App</Text>
+      <SearchBar onMovieData={handleMovieData} />
+      {/* <DetailsArea movieData={movieData} /> */}
     </View>
   );
 }
@@ -15,6 +24,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    padding: 10,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
 });
+
