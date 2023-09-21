@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import SearchBar from './components/Searchbar';
-import DetailsArea from './components/DetailsArea';
-
 export default function App() {
-  const [movieData, setMovieData] = useState(null);
-
-  const handleMovieData = (data) => {
-    setMovieData(data);
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Web Series Search App</Text>
-      <SearchBar onMovieData={handleMovieData} />
-      {/* <DetailsArea movieData={movieData} /> */}
+      <SearchBar  />
     </View>
   );
 }

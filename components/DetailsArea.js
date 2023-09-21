@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
 
 const DetailsArea = ({ movieData }) => {
-  if (!movieData || !movieData.results || movieData.results.length == 0) {
-    return <Text>No data available</Text>;
+  if (!movieData || !movieData.results ) {
+    return <Text>No data available,</Text>;
   }
 
   // Render each item in the list
